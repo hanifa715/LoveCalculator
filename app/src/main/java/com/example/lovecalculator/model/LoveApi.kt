@@ -1,4 +1,4 @@
-package com.example.lovecalculator.remote
+package com.example.lovecalculator.model
 
 import retrofit2.Call
 import retrofit2.http.GET

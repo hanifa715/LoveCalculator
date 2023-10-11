@@ -1,14 +1,16 @@
 package com.example.lovecalculator.ui.result
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.lovecalculator.remote.LoveModel
+import com.example.lovecalculator.App
+import com.example.lovecalculator.model.LoveModel
 import com.example.lovecalculator.R
-import com.example.lovecalculator.ui.main.MainFragment.Companion.LOVE_MODEL_KEY
+import com.example.lovecalculator.ui.main.CalculateFragment.Companion.LOVE_MODEL_KEY
 import com.example.lovecalculator.databinding.FragmentResultBinding
 
 class ResultFragment : Fragment() {
@@ -27,6 +29,7 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val loveModel = arguments?.getSerializable(LOVE_MODEL_KEY) as LoveModel
+        App.appDatabase.loveDao().insert(loveModel)
         with(binding){
             tvFirstName.text = loveModel.firstName
             tvSecondName.text = loveModel.secondName
@@ -35,7 +38,14 @@ class ResultFragment : Fragment() {
             btnTry.setOnClickListener {
                 findNavController().navigate(R.id.mainFragment)
             }
+
+            btnHome.setOnClickListener {
+                findNavController().navigate(R.id.mainFragment)
+            }
+            btnHistory.setOnClickListener {
+                Log.e("ololo", "result: Click" )
+                findNavController().navigate(R.id.historyFragment)
+            }
         }
     }
-
 }
