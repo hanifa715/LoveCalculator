@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-@Entity(tableName = "love.table")
+@Entity(tableName = "love_table")
 data class LoveModel(
     @PrimaryKey(autoGenerate = true)
     val id:Int,

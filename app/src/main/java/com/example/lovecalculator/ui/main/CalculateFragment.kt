@@ -42,7 +42,7 @@ class CalculateFragment : Fragment(),LoveView {
         binding.btnHome.setOnClickListener {
             findNavController().navigate(R.id.mainFragment) }
         binding.btnHistory.setOnClickListener {
-            Log.e("ololo", "main: clikc", )
+            Log.e("ololo", "main: click", )
             findNavController().navigate(R.id.historyFragment)
         }
     }

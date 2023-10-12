@@ -13,13 +13,11 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
 
     private val list = arrayListOf<LoveModel>()
 
-
     fun addHistory(history: List<LoveModel>) {
         list.clear()
         list.addAll(history)
         notifyDataSetChanged()
     }
-
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -44,16 +42,12 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
 
     inner class HistoryViewHolder(private val binding: ItemHistoryBinding) :
         ViewHolder(binding.root) {
-
-
         fun bind(item: LoveModel) {
-            with(binding){
+            with(binding) {
                 tvHistoryFirstName.text = item.firstName
                 tvHistorySecondName.text = item.secondName
-                tvHistoryResult.text = item.result
+                tvHistoryPercent.text = item.percentage
             }
         }
-
-
     }
 }

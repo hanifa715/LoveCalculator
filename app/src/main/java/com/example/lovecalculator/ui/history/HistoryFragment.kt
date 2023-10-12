@@ -37,7 +37,9 @@ class HistoryFragment : Fragment() {
             ivHome.setOnClickListener {
                 findNavController().navigate(R.id.mainFragment)
             }
-            ivHistory.findNavController().navigate(R.id.historyFragment)
+            ivHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
+            }
         }
     }
 

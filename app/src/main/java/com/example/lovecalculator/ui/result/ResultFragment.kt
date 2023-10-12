@@ -36,11 +36,11 @@ class ResultFragment : Fragment() {
             tvPercent.text = loveModel.percentage + "%"
             tvResult.text = loveModel.result
             btnTry.setOnClickListener {
-                findNavController().navigate(R.id.mainFragment)
+                findNavController().navigateUp()
             }
 
             btnHome.setOnClickListener {
-                findNavController().navigate(R.id.mainFragment)
+                findNavController().navigateUp()
             }
             btnHistory.setOnClickListener {
                 Log.e("ololo", "result: Click" )
