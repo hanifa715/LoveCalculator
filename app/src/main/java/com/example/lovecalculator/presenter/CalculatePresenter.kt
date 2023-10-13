@@ -1,14 +1,23 @@
 package com.example.lovecalculator.presenter
 
+import android.content.SharedPreferences
 import android.util.Log
 import com.example.lovecalculator.model.LoveModel
+import com.example.lovecalculator.model.Pref
 import com.example.lovecalculator.model.RetrofitService
+import com.example.lovecalculator.ui.main.CalculateFragment
 import com.example.lovecalculator.view.LoveView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class CalculatePresenter(var loveView: LoveView) {
+class CalculatePresenter @Inject constructor(private val sharedPreferences: SharedPreferences) {
+
+    lateinit var loveView: LoveView
+
+    @Inject
+    lateinit var pref: Pref
 
     private var api = RetrofitService().api
 
@@ -28,5 +37,10 @@ class CalculatePresenter(var loveView: LoveView) {
 
     fun setView(view: LoveView){
         this.loveView = view
+    }
+
+    fun showOnBoard(){
+        if (!pref.isOnBoardingShowed())
+            loveView.navigateToOnBoardingFragment()
     }
 }

@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.App
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentHistoryBinding
+import com.example.lovecalculator.ui.history.adapter.HistoryAdapter
 
 class HistoryFragment : Fragment() {
 

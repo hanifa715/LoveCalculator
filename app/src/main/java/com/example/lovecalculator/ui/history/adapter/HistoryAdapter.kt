@@ -1,10 +1,9 @@
-package com.example.lovecalculator.ui.history
+package com.example.lovecalculator.ui.history.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.lovecalculator.App
 import com.example.lovecalculator.databinding.ItemHistoryBinding
 import com.example.lovecalculator.model.LoveModel
 
@@ -22,7 +21,7 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): HistoryAdapter.HistoryViewHolder {
+    ): HistoryViewHolder {
         return HistoryViewHolder(
             ItemHistoryBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -32,7 +31,7 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
         )
     }
 
-    override fun onBindViewHolder(holder: HistoryAdapter.HistoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         holder.bind(list[position])
     }
 

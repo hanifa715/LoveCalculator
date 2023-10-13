@@ -4,17 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
     tools:context=".ui.history.HistoryFragment">
+
+    <TextView
+        android:id="@+id/tv_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:textColor="@color/pink"
+        android:textStyle="italic|bold"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="411dp"
-        android:layout_height="658dp"
+        android:layout_width="match_parent"
+        android:layout_height="525dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/iv_home"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintBottom_toTopOf="@id/iv_home"
+        app:layout_constraintTop_toBottomOf="@id/tv_history"
+        app:layout_constraintVertical_bias="0.33"
+        tools:layout_editor_absoluteX="4dp" />
 
     <ImageView
         android:id="@+id/iv_home"

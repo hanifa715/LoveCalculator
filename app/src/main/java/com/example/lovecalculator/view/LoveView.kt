@@ -6,4 +6,6 @@ interface LoveView {
 
     fun navigateToResultFragment(loveModel: LoveModel)
     fun showError(error: String)
+
+    fun navigateToOnBoardingFragment()
 }

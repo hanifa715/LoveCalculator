@@ -14,12 +14,16 @@ import com.example.lovecalculator.databinding.FragmentMainBinding
 import com.example.lovecalculator.presenter.CalculatePresenter
 import com.example.lovecalculator.model.LoveModel
 import com.example.lovecalculator.view.LoveView
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class CalculateFragment : Fragment(),LoveView {
 
     private lateinit var binding: FragmentMainBinding
 
-    private val presenter = CalculatePresenter(this)
+    @Inject
+    lateinit var presenter:CalculatePresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +36,7 @@ class CalculateFragment : Fragment(),LoveView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.setView(this)
+        presenter.showOnBoard()
         initClickers()
     }
 
@@ -57,6 +62,10 @@ class CalculateFragment : Fragment(),LoveView {
 
     override fun showError(error: String) {
         Toast.makeText(requireContext(),error,Toast.LENGTH_SHORT).show()
+    }
+
+    override fun navigateToOnBoardingFragment() {
+        findNavController().navigate(R.id.onBoardingFragment)
     }
 
     companion object{
